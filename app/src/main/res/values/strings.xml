@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">ActividadesEnAndorid</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="login_usuario">User</string>
+    <string name="login_pass">password</string>
+    <string name="login_cancel_button">Cancel</string>
+    <string name="login_ok_button">Sign In</string>
+    <string name="registro_nombre">Name</string>
+    <string name="registro_email">Email</string>
+    <string name="registro_te">Phone</string>
+    <string name="registro_guardar">Save</string>
+    <string name="registro_modificar">Edit</string>
+
+    <string name="login_btn_registrar">Register</string>
+
+    <string-array name="paises">
+        <item>Brasil</item>
+        <item>México</item>
+        <item>Estados Unidos</item>
+        <item>Cuba</item>
+        <item>Rusia</item>
+        <item>Honduras</item>
+        <item>Argentina</item>
+    </string-array>
+    <string name="title_activity_main_menu_principal">MainActivityMenuPrincipal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_home">ActivityHome</string>
+
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ActividadesEnAndorid</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+
+    <string name="login_usuario">Le User</string>
+    <string name="login_pass">Le password</string>
+    <string name="login_cancel_button">Le Cancel</string>
+    <string name="login_ok_button">Le Entre</string>
+    <string name="registro_nombre">LeNombre</string>
+    <string name="registro_email">Le corre</string>
+    <string name="registro_te">telefone</string>
+    <string name="registro_guardar">Le salve</string>
+
+    <string name="login_btn_registrar">Le registre</string>
+
+
+</resources>
