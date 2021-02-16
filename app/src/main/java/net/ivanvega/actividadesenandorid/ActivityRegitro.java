@@ -14,7 +14,13 @@ import android.widget.Toast;
 
 import net.ivanvega.actividadesenandorid.data.DAOUsuarios;
 import net.ivanvega.actividadesenandorid.data.Usuario;
-
+/**
+ * Agregar el de editar, para que modifique el usuario
+ * así como el punto 3
+ * y el query es el método de select de la base de datos,
+ * donde te regresa a la base de datos los usuarios que
+ * están registrados
+ */
 public class ActivityRegitro extends AppCompatActivity {
 
     TextView txtNombre, txtPass, txtEmail, txtTel;
