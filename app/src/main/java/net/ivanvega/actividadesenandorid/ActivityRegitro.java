@@ -73,7 +73,6 @@ public class ActivityRegitro extends AppCompatActivity {
 
                 }
 
-
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {

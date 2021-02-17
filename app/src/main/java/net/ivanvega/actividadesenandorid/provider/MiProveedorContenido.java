@@ -133,18 +133,19 @@ public class MiProveedorContenido extends ContentProvider {
         return result;
     }
 
-    @Nullable
     @Override
-    public Uri update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
-        Uri result=null;
-
+    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
+        int result=0;
         switch (uriMatcher.match(uri)){
-            case  1:
-                long idnewrow = daoUsuarios.update(contentValues,Long.parseLong( uri.getLastPathSegment()));
-                result = Uri.withAppendedPath(uri, String.valueOf( idnewrow));
+            case 1:
+                break;
+            case 2:
+                result =
+                        (daoUsuarios.update(values,Long.parseLong(uri.getLastPathSegment()))) ? 1:0;
                 break;
         }
-        return result;
+        return 0;
     }
+
 
 }

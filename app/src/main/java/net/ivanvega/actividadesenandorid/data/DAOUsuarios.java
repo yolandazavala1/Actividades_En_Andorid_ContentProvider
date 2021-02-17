@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.recyclerview.widget.LinearSmoothScroller;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,7 +138,16 @@ public class DAOUsuarios {
 
     }
 
+    public long update(Usuario usuario, long id){
+        ContentValues cv = new ContentValues();
 
+        cv.put(DB.COLUMS_TABLEUSUARIOS[1], usuario.getNombre());
+        cv.put(DB.COLUMS_TABLEUSUARIOS[2], usuario.getEmail());
+        cv.put(DB.COLUMS_TABLEUSUARIOS[3], usuario.getContraseña());
+        cv.put(DB.COLUMS_TABLEUSUARIOS[4], usuario.getTelefono());
+        return ad.update(DB.TABLE_USUARIOS_NAME, cv, "id="+id,
+                new String[]{String.valueOf(id), "VI"});
+    }
     public long insert(ContentValues cv){
 
         return ad.insert(DB.TABLE_USUARIOS_NAME,
@@ -148,8 +155,12 @@ public class DAOUsuarios {
                 cv);
 
     }
-    public long update(ContentValues updateValues, long id){
-        return ad.update(DB.TABLE_USUARIOS_NAME, updateValues, "_id=? and status=?",
+    public int update(ContentValues cv, long id){
+
+        return ad.update(DB.TABLE_USUARIOS_NAME,
+                cv ,"id="+id,
                 new String[]{String.valueOf(id), "VI"});
+
     }
+
 }
