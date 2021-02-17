@@ -34,7 +34,6 @@ public class DAOUsuarios {
     }
 
     public boolean delete (long id){
-
         return ad.delete(DB.TABLE_USUARIOS_NAME,
                 "_id=? and status=?",
                 new String[]{String.valueOf(id), "VI"}) >  0;
@@ -149,8 +148,8 @@ public class DAOUsuarios {
                 cv);
 
     }
-    public int update(ContentValues updateValues, String whereClause, String[] whereArgs){
-
-        return ad.update(DB.TABLE_USUARIOS_NAME, updateValues, whereClause, whereArgs);
+    public long update(ContentValues updateValues, long id){
+        return ad.update(DB.TABLE_USUARIOS_NAME, updateValues, "_id=? and status=?",
+                new String[]{String.valueOf(id), "VI"});
     }
 }

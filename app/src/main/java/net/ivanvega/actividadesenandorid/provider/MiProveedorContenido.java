@@ -1,7 +1,6 @@
 package net.ivanvega.actividadesenandorid.provider;
 
 import android.content.ContentProvider;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -134,8 +133,18 @@ public class MiProveedorContenido extends ContentProvider {
         return result;
     }
 
+    @Nullable
     @Override
-    public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
-        return 0;
+    public Uri update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
+        Uri result=null;
+
+        switch (uriMatcher.match(uri)){
+            case  1:
+                long idnewrow = daoUsuarios.update(contentValues,Long.parseLong( uri.getLastPathSegment()));
+                result = Uri.withAppendedPath(uri, String.valueOf( idnewrow));
+                break;
+        }
+        return result;
     }
+
 }
