@@ -23,8 +23,8 @@ import net.ivanvega.actividadesenandorid.data.Usuario;
  */
 public class ActivityRegitro extends AppCompatActivity {
 
-    TextView txtNombre, txtPass, txtEmail, txtTel;
-    Button btnAgregar, btnCancelar;
+    TextView txtNombre, txtPass, txtEmail, txtTel, txtId;
+    Button btnAgregar, btnCancelar, btnUpdate;
     Spinner spnPaisds ;
     String[] arrPaises;
 
@@ -33,7 +33,7 @@ public class ActivityRegitro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regitro);
-
+        txtId = (TextView) findViewById(R.id.txtId);
         txtNombre = (TextView) findViewById(R.id.txtNombre);
         txtPass = (TextView) findViewById(R.id.txtPassword);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
@@ -41,14 +41,11 @@ public class ActivityRegitro extends AppCompatActivity {
 
         String botonOK = getResources().getString(R.string.registro_modificar);
 
-
-
         btnAgregar = (Button) findViewById(R.id.btnGuardar);
-
         btnAgregar.setText(botonOK);
+        btnUpdate = (Button) findViewById(R.id.btnUpdate);
 
         btnCancelar = (Button) findViewById(R.id.btnCancelar);
-
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +76,12 @@ public class ActivityRegitro extends AppCompatActivity {
 
             }
         });
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

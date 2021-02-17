@@ -41,22 +41,7 @@ public class DAOUsuarios {
 
     }
 
-    public boolean update(Usuario usuario){
 
-        ContentValues cv = new ContentValues();
-
-        cv.put(DB.COLUMS_TABLEUSUARIOS[1], usuario.getNombre());
-        cv.put(DB.COLUMS_TABLEUSUARIOS[2], usuario.getEmail());
-        cv.put(DB.COLUMS_TABLEUSUARIOS[3], usuario.getContraseña());
-        cv.put(DB.COLUMS_TABLEUSUARIOS[4], usuario.getTelefono());
-
-        return   ad.update(
-                DB.TABLE_USUARIOS_NAME,
-                cv ,
-                "_id=?",
-                new String[]{ String.valueOf( usuario.getID())}
-                )   > 0;
-    }
 
     public List<Usuario> getAll(){
         List<Usuario> lst = new ArrayList<Usuario>();
@@ -156,6 +141,7 @@ public class DAOUsuarios {
 
     }
 
+
     public long insert(ContentValues cv){
 
         return ad.insert(DB.TABLE_USUARIOS_NAME,
@@ -163,5 +149,8 @@ public class DAOUsuarios {
                 cv);
 
     }
+    public int update(ContentValues updateValues, String whereClause, String[] whereArgs){
 
+        return ad.update(DB.TABLE_USUARIOS_NAME, updateValues, whereClause, whereArgs);
+    }
 }
