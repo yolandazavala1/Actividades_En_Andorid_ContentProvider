@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,15 +139,15 @@ public class DAOUsuarios {
 
     }
 
-    public long update(Usuario usuario, long id){
+    public int update(Usuario usuario, String id_nombre){
         ContentValues cv = new ContentValues();
 
         cv.put(DB.COLUMS_TABLEUSUARIOS[1], usuario.getNombre());
         cv.put(DB.COLUMS_TABLEUSUARIOS[2], usuario.getEmail());
         cv.put(DB.COLUMS_TABLEUSUARIOS[3], usuario.getContraseña());
         cv.put(DB.COLUMS_TABLEUSUARIOS[4], usuario.getTelefono());
-        return ad.update(DB.TABLE_USUARIOS_NAME, cv, "id="+id,
-                new String[]{String.valueOf(id), "VI"});
+        return ad.update(DB.TABLE_USUARIOS_NAME, cv, "nombre="+id_nombre,
+                new String[]{String.valueOf(id_nombre), "VI"});
     }
     public long insert(ContentValues cv){
 

@@ -87,7 +87,27 @@ public class ActivityRegitro extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_LONG).show();
+                //Update
+                String nombre = txtNombre.getText().toString();
+                String pass = txtPass.getText().toString();
+                String email = txtEmail.getText().toString();
+                String tel = txtTel.getText().toString();
+                Usuario editar = new Usuario(nombre,tel,email,pass);
+                DAOUsuarios dao = new DAOUsuarios(getApplicationContext());
+
+                if( dao.update(editar, nombre)!= -1){
+                    Intent intent = new Intent();
+                    intent.putExtra("nuevoCliente", editar);
+                    Toast.makeText(getApplicationContext(), "Objecto cambiado dentro de Intent!", Toast.LENGTH_LONG).show();
+
+                    setResult(Activity.RESULT_OK,  intent  );
+                    finish();
+                }else{
+                    setResult(Activity.RESULT_CANCELED  );
+                    finish();
+
+                }
+                ActualizarTabla();
 
             }
         });
